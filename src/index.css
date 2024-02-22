@@ -11,3 +11,73 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+main {
+  margin: auto auto;
+  width: 90vw;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 2rem;
+}
+
+h2 {
+  margin-bottom: 5px;
+}
+.title-underline {
+  width: 90px;
+  height: 0.5rem;
+  background-color: aqua;
+  margin-bottom: 1rem;
+}
+
+.list-artical {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.single-artical {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.single-artical > img {
+  height: 20rem;
+  width: auto;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  object-fit: cover;
+}
+
+.price {
+  position: absolute;
+  background-color: aqua;
+  height: 1rem;
+  padding: 0.25rem;
+  right: 0px;
+}
+
+.artical-info {
+  background-color: rgb(252, 252, 252);
+  padding: 5px 0 0 20px;
+  
+  line-height: 1.5;
+}
+
+.artical-name {
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.artical-info p {
+  margin: 0 2px 20px 5px;
+  color: #64748b;
+}

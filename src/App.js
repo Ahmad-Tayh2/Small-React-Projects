@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import Artical from "./Artical";
 
 function App() {
+  const apiURL = 'https://course-api.com/react-tours-project';
+  const [data, setData] = useState([]);
+
+  async function fetchData(){
+
+    try{
+      const response = await fetch(apiURL);
+      const data = await response.json();
+      setData(data);
+      
+    }catch(err){
+      console.log(err);
+    }
+    
+  }
+  useEffect(() => {
+    fetchData()
+  }, []);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main>
+        <section>
+          <h2>Our Tours</h2>
+          <div className="title-underline"></div>
+          <div className="list-artical">
+            {data.map((artical) => (
+              <Artical info={artical.info} name={artical.name} price={artical.price} image={artical.image} key={artical.id}/>
+            ))}
+          </div>
+        </section>
+      </main>
     </div>
   );
 }
